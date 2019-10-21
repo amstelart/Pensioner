@@ -1,0 +1,221 @@
+// В этом файле должны быть стили для БЭМ-блока landing, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.landing {
+
+  $block-name:                &; // #{$block-name}__element
+
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-overflow-style: scrollbar;
+  -ms-text-size-adjust: 100%; // stylelint-disable-line  property-no-vendor-prefix
+  min-width: 320px;
+  min-height: 100%;
+
+  &__section {
+    padding: 60px 0;
+
+    &--intro {
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      min-height: 100vh;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color-main, 0.9);
+
+      }
+
+      #{$block-name}__wrap {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+      }
+    }
+
+    &--request {
+      background-color: $color-gray;
+    }
+    &--questions {
+      background-color: $color-main;
+      color: #fff;
+
+      h2 {
+        text-align: center;
+        margin-bottom: 100px;
+      }
+    }
+  
+    &--help {
+
+      h2 {
+        text-align: center;
+        margin-bottom: 100px;
+      }
+    }
+    
+    &--jurist {
+      background-color: $color-gray;
+    }
+    &--contacts {
+      background-image: url('../img/map.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__wrap {
+    @include container;
+  }
+
+  &__content {
+
+  }
+
+}
+
+.intro-top {
+  margin-bottom: 60px;
+}
+
+.intro-list {
+  @include row;
+  list-style: none;
+  padding: 0;
+
+  li {
+    @include col();
+    @include col(lg, 4);
+    position: relative;
+    margin-bottom: 40px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      width: 2px;
+      top: 0;
+      left: 15px;
+      bottom: 0;
+    }
+
+    p {
+      padding-left: 15px;
+      margin: 0;
+    }
+  }
+}
+
+.request-caption {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  max-width: 880px;
+  margin: auto;
+}
+
+.request-form-wrap {
+  background: #fff;
+  padding: 20px 32px;
+}
+
+.request-form {
+  @include row;
+
+  &__col-6 {
+    @include col();
+    @include col(lg, 6);
+  }
+
+  &__col-12 {
+    @include col();
+  }
+
+  &__action {
+    @include col();
+    display: flex;
+
+    p {
+      margin-right: auto;
+    }
+  }
+}
+
+.request-list {
+  padding: 0;
+  list-style: none;
+  @include row;
+
+  li {
+    @include col();
+    @include col(lg, 4);
+  }
+}
+
+.questions-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: questions-counter;
+  @include row;
+
+  .list-item {
+
+    @include col();
+    @include col(lg, 4);
+    display: flex;
+    margin-bottom: 100px;
+
+    p {
+      margin: 0;
+    }
+
+    &:before {
+      counter-increment: questions-counter;
+      content: "0" counter(questions-counter);
+      font-size: 60px;
+      margin-right: 10px;
+    }
+  }
+
+  .list-action {
+    @include col();
+    @include col(lg, 4);
+  }
+}
+
+.help-list {
+  list-style: none;
+  padding: 0;
+  @include row;
+}
+
+.help-item {
+  @include col();
+  @include col(lg, 4);
+  text-align: center;
+
+  &__icon {
+    width: 69px;
+    height: 89px;
+    margin: auto;
+    margin-bottom: 30px;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    max-width: 240px;
+    margin: auto;
+  }
+}
