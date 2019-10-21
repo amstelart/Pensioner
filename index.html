@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="no-js landing" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Защита социальных прав населения</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"> -->
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"> -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic,cyrillic-ext"
+    rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet" media="screen">
+
+  <script>
+    // Маркер работающего javascript
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    document.addEventListener('DOMContentLoaded', function(){
+      if (window.isMobile !== undefined) {
+        // console.log(isMobile);
+        if(isMobile.any) {
+          var rootClasses = ' is-mobile';
+          for (key in isMobile) {
+            if(typeof isMobile[key] === 'boolean' && isMobile[key] && key !== 'any') rootClasses += ' is-mobile--'+key;
+            if(typeof isMobile[key] === 'object' && key !== 'other') {
+              for (type in isMobile[key]) {
+                if(isMobile[key][type]) rootClasses += ' is-mobile--'+key+'-'+type;
+              }
+            }
+          }
+          document.documentElement.className += rootClasses;
+        }
+      }
+      else {
+        console.log('Классы для мобильных не добавлены: в сборке отсутствует isMobile.js');
+      }
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+  <header class="landing__header">
+    <div class="landing__wrap">
+      <div class="landing__content">
+    
+      </div>
+    </div>
+  </header>
+
+  <div class="landing__section landing__section--intro" style="background-image: url('img/intro-bg.jpg');">
+    <div class="landing__wrap">
+      <div class="landing__content">
+        <div class="intro-top">
+          <h1>Защита социальных прав населения</h1>
+          <p>Прием граждан ежедневно с 9.00 до 22.00 по предваритльной записи</p>
+          <button class="btn">Заполнить форму</button>
+        </div>
+        <ul class="intro-list">
+          <li>
+            <p>10 лет в сфере защиты социальных прав населения</p>
+          </li>
+          <li>
+            <p>Узконаправленные специалисты в области социального права</p>
+          </li>
+          <li>
+            <p>От первого анализа до защиты в суде и всех госучреждениях</p>
+          </li>
+          <li>
+            <p>86% выигранных дел на сегодняшний день</p>
+          </li>
+          <li>
+            <p>Быстрое решение спорных вопросов</p>
+          </li>
+          <li>
+            <p>Работаем с льготными категориями граждан</p>
+          </li>
+        </ul>
+
+        <p>Проект реализован в рамках ФЕДЕРАЛЬНОГО ЗАКОНА РФ от ноября 2011г. №324 ФЗ «О бесплатной юридической помощи в Российской
+        Федерации»</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing__section landing__section--request">
+    <div class="landing__wrap">
+      <div class="landing__content">
+        <div class="request-caption">
+          <p>Для получения консультации и решения возникшей проблемы необходимо заполнить форму обратной связи с описанием ситуации,
+          указав контактные данные заявителя
+          или позвоните по телефону горячей линии <a href="tel:+74957840742">8 (495) 784 0742</a></p>
+        </div>
+        <div class="request-form-wrap">
+          <form action="" class="request-form">
+            <div class="request-form__col-6">
+              <label class="field-text">
+                <span class="field-text__input-wrap">
+                  <input class="field-text__input" type="text" placeholder="placeholder" id="" name="">
+                </span>
+              </label>
+            </div>
+            <div class="request-form__col-6">
+              <label class="field-text">
+                <span class="field-text__input-wrap">
+                  <input class="field-text__input" type="text" placeholder="placeholder" id="" name="">
+                </span>
+              </label>
+            </div>
+            <div class="request-form__col-12">
+              <label class="field-text" for="">
+                <textarea class="field-text__input" name="" id=""></textarea>
+              </label>
+            </div>
+            <div class="request-form__action">
+              <p>Заявки с сайта принимаются круглосуточно.
+              Среднее время рассмотрения обращений – 10 минут</p>
+              <button class="btn">Отправить</button>
+            </div>
+          </form>
+        </div>
+        <ul class="request-list">
+          <li>
+            <h4>Прием у специалиста</h4>
+            <p>Посетить опытного юриста по жилищному и семейному праву для быстрого
+            и детального разбора вашей ситуации</p>
+          </li>
+          <li>
+            <h4>Решение вопроса</h4>
+            <p>В рамках действующего законодательства РФ, вам будет предложено оптимальное решение вашего вопроса</p>
+          </li>
+          <li>
+            <h4>Бесплатная консультация</h4>
+            <p>Получить квалифицированную консультацию по вашей проблеме
+            и принять меры по ее решению</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing__section landing__section--questions">
+    <div class="landing__wrap">
+      <div class="landing__content">
+        <h2>Мы — специалисты <br>
+        в решении спорных вопросов</h2>
+
+        <ul class="questions-list">
+          <li class="list-item">
+            <p>Пересчет пенсии</p>
+          </li>
+          <li class="list-item">
+            <p>Индексация пенсии</p>
+          </li>
+          <li class="list-item">
+            <p>Программы по улучшению жилищных условий</p>
+          </li>
+          <li class="list-item">
+            <p>Помощь в получении инвалидности</p>
+          </li>
+          <li class="list-item">
+            <p>Помощь в получении пенсии по инвалидности</p>
+          </li>
+          <li class="list-item">
+            <p>Помощь в получении звания «Ветеран труда»</p>
+          </li>
+          <li class="list-item">
+            <p>Помощь в получениее социальных пособий, компенсаций и льгот</p>
+          </li>
+          <li class="list-item">
+            <p>Обжалование действий/бездействий государственных органов</p>
+          </li>
+          <li class="list-action">
+            <a href="#" class="btn">Заполнить форму</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing__section landing__section--help">
+    <div class="landing__wrap">
+      <div class="landing__content">
+        <h2>Вы гарантировано получите <br> квалифицированную помощь юриста</h2>
+        <ul class="help-list">
+          <li class="help-item">
+            <div class="help-item__icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#help-icon-01"></use>
+              </svg>
+            </div>
+            <p class="help-item__text">Правовой анализ
+            и подготовку документов</p>
+          </li>
+          <li class="help-item">
+            <div class="help-item__icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#help-icon-02"></use>
+              </svg>
+            </div>
+            <p class="help-item__text">Возможность досудебного разрешения споров</p>
+          </li>
+          <li class="help-item">
+            <div class="help-item__icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#help-icon-03"></use>
+              </svg>
+            </div>
+            <p class="help-item__text">Представление ваших интересов в ПФР</p>
+          </li>
+          <li class="help-item">
+            <div class="help-item__icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#help-icon-04"></use>
+              </svg>
+            </div>
+            <p class="help-item__text">Представление ваших интересов
+            в Департаменте Имущества города Москвы</p>
+          </li>
+          <li class="help-item">
+            <div class="help-item__icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#help-icon-05"></use>
+              </svg>
+            </div>
+            <p class="help-item__text">Защита ваших интересов
+            в Департаменте Социальной Защиты Населения</p>
+          </li>
+          <li class="help-item">
+            <div class="help-item__icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#help-icon-06"></use>
+              </svg>
+            </div>
+            <p class="help-item__text">Защита социальных прав в судебном порядке</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing__section landing__section--jurist">
+    <div class="landing__wrap">
+      <div class="landing__content">
+        <h2>Дежурный юрист сегодня</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing__section landing__section--contacts">
+    <div class="landing__wrap">
+      <div class="landing__content">
+        
+      </div>
+    </div>
+  </div>
+
+  <footer class="landing__footer">
+    <div class="landing__wrap">
+      <div class="landing__content">
+    
+      </div>
+    </div>
+  </footer> 
+  <script src="js/script.min.js"></script>
+
+</body>
+</html>
