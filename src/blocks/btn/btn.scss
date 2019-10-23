@@ -19,7 +19,7 @@ $border-radius:               3px !default;
   box-sizing: border-box;
   display: inline-block;
   margin: 0;
-  padding: $field-padding-vertical  $field-padding-horizontal;
+  padding: 0.7em 1.3em;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
@@ -29,19 +29,24 @@ $border-radius:               3px !default;
   line-height: $line-height;
   text-decoration: none;
   text-transform: none;
-  color: $text-color;
+  color: #fff;
   border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  background-color: $gray-lightest;
+  border: 1px solid $color-main;
+  background-color: $color-main;
   background-image: none;
   cursor: pointer;
+  min-width: 258px;
+
+  @media (min-width: $screen-xl) {
+    padding: $field-padding-vertical  $field-padding-horizontal;
+  }
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-    background-color: darken($gray-lightest, 10%);
-    border-color: darken($gray-lighter, 12%);
+    color: #fff;
+    background-color: darken($color-main, 10%);
+    border-color: darken($color-main, 12%);
   }
 
   &:active,
@@ -62,30 +67,31 @@ $border-radius:               3px !default;
     }
   }
 
-  // &__icon {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
+  &--block {
+    width: 100%;
+  }
 
+  &--white {
+    color: #3B4256;
+    background-color: #fff;
+    border: 1px solid #fff;
 
+    &:hover,
+    &:focus {
+      color: #3B4256;
+      background-color: darken(#fff, 10%);
+      border-color: darken(#fff, 12%);
+    }
 
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   border: 1px solid $color-main;
+    &--disabled,
+    &:disabled {
+      color: #fff;
+      background-color: $color-main;
+      border-color: $color-main;
+    }
+  }
 
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     border-color: darken($color-main, 12%);
-  //   }
-
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     border-color: $color-main;
-  //   }
-  // }
+  @media (max-width: ($screen-md - 1)) {
+    width: 100%;
+  }
 }

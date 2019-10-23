@@ -21,7 +21,7 @@ $transition-time:             0.3s !default;
 
   $block-name:                &; // #{$block-name}__element
 
-  position: relative;
+  // position: relative;
   z-index: 10;
 
   // первый уровень
@@ -39,6 +39,12 @@ $transition-time:             0.3s !default;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.2s;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: darken($color-main, 3%);
+        z-index: 10;
       }
 
       .js #{$block-name}--open & {
@@ -57,11 +63,8 @@ $transition-time:             0.3s !default;
   &__item {
     position: relative;
 
-    &--active {
-
-      & > #{$block-name}__link {
-        color: #000;
-      }
+    @media (min-width: $menu-desktop-width) {
+      margin-right: 1.6em;
     }
   }
 
@@ -69,79 +72,23 @@ $transition-time:             0.3s !default;
     display: block;
     padding: 0.5em;
     text-decoration: none;
-    background-color: #fff;
+    color: #fff;
+
+    @media (max-width: ($menu-desktop-width - 1)) {
+      padding: 1em 1.5em;
+      border-bottom: 1px solid darken($color-main, 5%);
+      border-top: 1px solid darken($color-main, 5%);
+    }
+
+    // &.active {
+    //   color: rgba(#fff, 0.7);
+    // }
 
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $gray-lightest;
-    }
-
-    &--lvl-2 {
-
-      @media (max-width: ($menu-desktop-width - 1)) {
-        padding-left: 1.2em;
-      }
-    }
-
-    &--lvl-3 {
-
-      @media (max-width: ($menu-desktop-width - 1)) {
-        padding-left: 2.4em;
-      }
     }
   }
-
-  &__sublist-wrapper {
-
-    &--lvl-2 {
-
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
-
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
-      }
-    }
-
-    &--lvl-3 {
-
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 100%;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
-
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item--lvl-2:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
-      }
-    }
-  }
-
-
 
   // переключатель
 

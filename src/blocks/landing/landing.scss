@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока landing, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока landing, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
@@ -13,14 +13,61 @@
   min-width: 320px;
   min-height: 100%;
 
+  &__header {
+    padding: 30px 0;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    // @media (max-width: ($menu-desktop-width - 1)) {
+    //   background-color: $color-main;
+    // }
+
+    &--sticky {
+      background-color: $color-main;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: auto;
+      opacity: 1;
+      z-index: 10;
+      padding: 15px 0 !important;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.22);
+      animation: slideInDown 0.5s 1 ease-in-out;
+
+      .header-phone {
+
+        p {
+          display: none;
+        }
+      }
+    }
+
+    #{$block-name}__content {
+      display: flex;
+      align-items: center;
+
+      .main-nav {
+        margin-right: auto;
+      }
+    }
+  }
+
   &__section {
-    padding: 60px 0;
+    padding: 40px 0;
 
     &--intro {
       background-size: cover;
       background-repeat: no-repeat;
       position: relative;
-      min-height: 100vh;
+      padding-top: 70px;
+
+      @media (min-width: $screen-xl) {
+        padding-top: 220px;
+      }
 
       &:before {
         content: "";
@@ -30,12 +77,10 @@
         right: 0;
         bottom: 0;
         background-color: rgba($color-main, 0.9);
-
       }
 
       #{$block-name}__wrap {
         position: relative;
-        z-index: 2;
         color: #fff;
       }
     }
@@ -43,31 +88,74 @@
     &--request {
       background-color: $color-gray;
     }
+
     &--questions {
       background-color: $color-main;
       color: #fff;
+      padding-top: 30px;
+
+      @media (min-width: $screen-xl) {
+        padding-top: 80px;
+      }
 
       h2 {
         text-align: center;
-        margin-bottom: 100px;
+        margin-bottom: 60px;
+
+        @media (min-width: $screen-xl) {
+          margin-bottom: 100px;
+        }
       }
     }
-  
+
     &--help {
 
       h2 {
         text-align: center;
+        margin-bottom: 30px;
+        margin-top: 20px;
+
+        @media (min-width: $screen-xl) {
+          margin-bottom: 100px;
+        }
+      }
+    }
+
+    &--jurist {
+      background-color: $color-gray;
+      padding-bottom: 40px;
+
+      @media (min-width: $screen-xl) {
         margin-bottom: 100px;
       }
     }
-    
-    &--jurist {
-      background-color: $color-gray;
+
+    &--helpful {
+      background-color: $color-main;
+      color: #fff;
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      @media (min-width: $screen-xl) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
     }
+
     &--contacts {
-      background-image: url('../img/map.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
+      padding: 0;
+      position: relative;
+
+      #{$block-name}__content {
+        padding-top: 120px;
+        padding-bottom: 120px;
+      }
+
+      #{$block-name}__wrap {
+        display: flex;
+        align-items: center;
+        height: 720px;
+      }
     }
   }
 
@@ -81,8 +169,54 @@
 
 }
 
+.header-phone {
+
+  color: #fff;
+  font-size: 14px;
+
+  &__num {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  p {
+    margin: 0;
+
+    @media (max-width: ($menu-desktop-width - 1)) {
+      display: none;
+    }
+  }
+}
+
 .intro-top {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  max-width: 560px;
+
+  @media (max-width: $screen-sm - 1) {
+    min-height: 84vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 60px;
+  }
+
+  h1 {
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    margin-top: 40px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 60px;
+    }
+  }
 }
 
 .intro-list {
@@ -93,8 +227,11 @@
   li {
     @include col();
     @include col(lg, 4);
+    @include col(md, 6);
     position: relative;
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
 
     &:before {
       content: "";
@@ -108,6 +245,7 @@
 
     p {
       padding-left: 15px;
+      font-weight: 500;
       margin: 0;
     }
   }
@@ -115,16 +253,40 @@
 
 .request-caption {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
   text-align: center;
-  max-width: 880px;
   margin: auto;
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-lg) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 50px;
+  }
+
+  span,
+  a {
+    color: #E53935;
+    text-decoration: none;
+    white-space: nowrap;
+  }
 }
 
 .request-form-wrap {
   background: #fff;
-  padding: 20px 32px;
+  padding: 24px 32px;
+  margin-bottom: 40px;
+
+  @media (max-width: ($screen-sm - 1)) {
+    padding: 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 80px;
+  }
 }
 
 .request-form {
@@ -132,7 +294,7 @@
 
   &__col-6 {
     @include col();
-    @include col(lg, 6);
+    @include col(md, 6);
   }
 
   &__col-12 {
@@ -142,10 +304,17 @@
   &__action {
     @include col();
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
     p {
       margin-right: auto;
+      margin-top: 0;
     }
+  }
+
+  .field-text {
+    margin-bottom: 24px;
   }
 }
 
@@ -157,6 +326,11 @@
   li {
     @include col();
     @include col(lg, 4);
+    margin-bottom: 40px;
+
+    p {
+      margin: 0;
+    }
   }
 }
 
@@ -166,28 +340,46 @@
   counter-reset: questions-counter;
   @include row;
 
+  @media (max-width: ($screen-lg - 1)) {
+    max-width: 700px;
+    margin: auto;
+  }
+
   .list-item {
 
     @include col();
     @include col(lg, 4);
+    @include col(md, 6);
     display: flex;
-    margin-bottom: 100px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 100px;
+    }
 
     p {
-      margin: 0;
+      margin: 5px 0 0 0;
     }
 
     &:before {
       counter-increment: questions-counter;
       content: "0" counter(questions-counter);
       font-size: 60px;
+      line-height: 1;
       margin-right: 10px;
+      display: inline-block;
     }
   }
 
   .list-action {
     @include col();
     @include col(lg, 4);
+
+    @media (max-width: ($screen-lg - 1)) {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
@@ -195,12 +387,23 @@
   list-style: none;
   padding: 0;
   @include row;
+
+  @media (max-width: ($screen-lg - 1)) {
+    max-width: 700px;
+    margin: auto;
+  }
 }
 
 .help-item {
   @include col();
   @include col(lg, 4);
+  @include col(md, 6);
   text-align: center;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 60px;
+  }
 
   &__icon {
     width: 69px;
@@ -215,7 +418,212 @@
   }
 
   &__text {
-    max-width: 240px;
-    margin: auto;
+    color: #3B4256;
+    line-height: 24px;
+  }
+}
+
+.help-action {
+  text-align: center;
+  max-width: 440px;
+  margin: 40px auto 40px auto;
+
+  @media (min-width: $screen-xl) {
+    margin: 60px auto 60px auto;
+  }
+
+  .btn {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 12px;
+    color: #848E99;
+  }
+}
+
+.jurist-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 30px;
+
+  h2 {
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+
+  span {
+    margin-bottom: 15px;
+  }
+}
+
+.jurist-row {
+  @include row;
+}
+
+.jurist-card {
+  @include col()
+  @include col(lg, 6)
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-lg) {
+    padding-right: 45px !important;
+    margin-bottom: 0;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__inner {
+    background: #fff;
+  }
+
+  &__body {
+    padding: 20px 30px;
+
+    .part {
+
+      &:first-child {
+        margin-bottom: 40px;
+      }
+
+      p {
+        margin: 0.5em 0;
+      }
+
+      .btn {
+        margin-top: 20px;
+
+        span {
+          @media (max-width: ($screen-sm - 1)) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.jurist-info {
+   @include col();
+   @include col(lg, 6);
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+
+   @media (min-width: $screen-lg) {
+     padding-left: 45px !important;
+     padding-right: 120px !important;
+   }
+
+   &__top {
+      margin-bottom: auto;
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 40px;
+
+        span,
+        a {
+         color: #E53935;
+         text-decoration: none;
+        }
+      }
+   }
+
+   &__bottom {
+      h5 {
+        margin-bottom: 30px;
+      }
+   }
+}
+
+.helpful-row {
+  @include row;
+}
+
+.helpful-col {
+  @include col();
+  @include col(lg, 6);
+
+  &:first-child {
+    @media (min-width: $screen-lg) {
+      padding-right: 45px;
+    }
+  }
+
+  &:last-child {
+    @media (min-width: $screen-lg) {
+      padding-left: 45px;
+    }
+  }
+
+  p {
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.6;
+
+    @media (min-width: $screen-xl) {
+      max-width: 400px;
+    }
+
+    &:before {
+      content: "";
+      width: 2px;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contacts-card {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 4px;
+  padding: 30px;
+  max-width: 350px;
+
+  @media (max-width: ($screen-sm - 1)) {
+    max-width: 300px;
+    padding: 18px;
+  }
+
+  .part {
+    margin-bottom: 45px;
+  }
+
+  p {
+    span {
+      white-space: nowrap;
+      color: #E53935;
+    }
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
   }
 }
