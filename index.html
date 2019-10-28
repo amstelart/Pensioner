@@ -69,6 +69,11 @@
                 </a>
               </li>
               <li class="main-nav__item">
+                <a href="#reviews" class="main-nav__link">
+                  Отзывы
+                </a>
+              </li>
+              <li class="main-nav__item">
                 <a href="#contacts" class="main-nav__link">
                   Контакты
                 </a>
@@ -137,7 +142,7 @@
             <div class="request-form__col-6">
               <label class="field-text">
                 <span class="field-text__input-wrap">
-                  <input class="field-text__input" type="text" placeholder="Номер телефона" id="" name="">
+                  <input class="field-text__input phone-mask" type="text" placeholder="Номер телефона" id="" name="">
                 </span>
               </label>
             </div>
@@ -337,21 +342,78 @@
     </div>
   </div>
 
-  <div id="contacts" class="landing__section landing__section--contacts">
-    <div id="map">
-      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A29f5e36d870f17a10d2b46c7eda7431d688ec6b595617a17dd992c7499e8e2e0&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=false"></script>
-    </div>
+  <div id="reviews" class="landing__section landing__section--reviews">
     <div class="landing__wrap">
       <div class="landing__content">
-        <div class="contacts-card">
-          <div class="part">
-            <h4>Россия, Москва</h4>
-            <p>Улица Ленинская слобода, д19 Бизнес-центр «Омега плаза»</p>
+        <h2>Отзывы наших клиентов</h2>
+        <div class="reviews-wrap">
+          <div class="reviews-card">
+            <div class="reviews-card__inner">
+              <div class="reviews-card__img-wrap">
+                <img src="img/reviews-img-demo.jpg" alt="" class="reviews-card__img">
+              </div>
+              <div class="reviews-card__content">
+                <h3>Сряпунин Максим <br> Алексеевич</h3>
+                <p>Благодарю юристов за помощь и отношение. Честно выполнили все договоренности и помогли разобраться с пенсией. Очень рад, что обратился именно сюда, теперь при любом возникшем вопоосе смело звоню уже знакомым профессионалам!</p>
+              </div>
+            </div>
           </div>
-          <div class="part">
-            <p>Телефон бесплатной горячей линии: <span>8 (495) 784 0742</span></p>
+          <div class="reviews-card">
+            <div class="reviews-card__inner">
+              <div class="reviews-card__img-wrap">
+                <img src="img/reviews-img-demo.jpg" alt="" class="reviews-card__img">
+              </div>
+              <div class="reviews-card__content">
+                <h3>Иванов <br>Олег</h3>
+                <p>Благодарю юристов за помощь и отношение. Честно выполнили все договоренности и помогли разобраться с пенсией. Очень рад, что обратился именно сюда, теперь при любом возникшем вопоосе смело звоню уже знакомым профессионалам!</p>
+              </div>
+            </div>
           </div>
-          <a href="#request" class="btn" data-scroll-link>Заполнить форму онлайн</a>
+          <div class="reviews-card">
+            <div class="reviews-card__inner">
+              <div class="reviews-card__img-wrap">
+                <img src="img/reviews-img-demo.jpg" alt="" class="reviews-card__img">
+              </div>
+              <div class="reviews-card__content">
+                <h3>Иванов <br>Олег</h3>
+                <p>Благодарю юристов за помощь и отношение. Честно выполнили все договоренности и помогли разобраться с пенсией. Очень рад, что обратился именно сюда, теперь при любом возникшем вопоосе смело звоню уже знакомым профессионалам!</p>
+              </div>
+            </div>
+          </div>
+          <div class="reviews-card">
+            <div class="reviews-card__inner">
+              <div class="reviews-card__img-wrap">
+                <img src="img/reviews-img-demo.jpg" alt="" class="reviews-card__img">
+              </div>
+              <div class="reviews-card__content">
+                <h3>Сряпунин Максим <br>Алексеевич</h3>
+                <p>Благодарю юристов за помощь и отношение. Честно выполнили все договоренности и помогли разобраться с пенсией. Очень рад, что обратился именно сюда, теперь при любом возникшем вопоосе смело звоню уже знакомым профессионалам!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contacts" class="landing__section landing__section--contacts">
+    <div class="landing__wrap">
+      <div class="landing__content">
+        <h2>Контакты</h2>
+        <div class="contacts-wrap">
+          <div class="contacts-col">
+            <div class="part">
+              <h4>Россия, Москва</h4>
+              <p>Улица Ленинская слобода, д19 <br> Бизнес-центр «Омега плаза»</p>
+            </div>
+            <div class="part">
+              <p>Телефон бесплатной горячей линии: <br> <a href="tel:+74957840742">8 (495) 784 0742</a></p>
+            </div>
+          </div>
+          <div class="contacts-col">
+            <p>Или заполните форму обратной связи с описанием <br>ситуации, указав контактные данные заявителя.</p>
+            <a href="#request" class="btn btn--white" data-scroll-link>Получите бесплатную консультацию</a>
+          </div>
         </div>
       </div>
     </div>
