@@ -1,6 +1,9 @@
 // Если на проекте jQuery
 jQuery(document).ready(function ($) {
 
+  // https://github.com/digitalBush/jquery.maskedinput
+  $(".phone-mask").mask("+7(999) 999-9999");
+
   //animate header
   var fixNav = 100;
   $(window).scroll(function () {
